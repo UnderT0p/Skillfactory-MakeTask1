@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo docker pull nginx
 sudo docker save -o ~/nginxImage.tar nginx
-ssh $1 sudo mkdir ~/htmlForBugs
+ssh $1 mkdir ~/htmlForBugs
 sudo scp ~/nginxImage.tar $1:~/
 sudo scp -r ~/www.chiark.greenend.org.uk/~sgtatham $1:~/htmlForBugs/
 sudo scp ~/nginxDoc.conf $1:~/nginxDoc.conf
