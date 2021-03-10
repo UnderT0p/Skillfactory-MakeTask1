@@ -1,5 +1,7 @@
 #!/bin/bash
-sudo scp ~/Skillfactory-MakeTask1/nginxImage.tar $1:~/
+sudo docker pull nginx
+sudo docker save -o ~/nginxImage.tar nginx
+sudo scp ~/nginxImage.tar $1:~/
 sudo scp /var/www/www.chiark.greenend.org.uk/~sgtatham $1:/var/www/html
 sudo scp ~/nginxDoc.conf $1:~/nginxDoc.conf
 ssh $1 sudo docker load -i ~/nginxImage.tar
