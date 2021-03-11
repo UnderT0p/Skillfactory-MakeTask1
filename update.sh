@@ -13,3 +13,5 @@ ssh $user sudo docker stop test3
 ssh $user sudo docker rm test3
 #запускаем новый контейнер с новыми данными сайта
 ssh $user sudo docker run --name test3 -d -p 8080:80 -v ~/Skillfactory-MakeTask1/htmlForBugs://usr/share/nginx/html:ro -v ~/Skillfactory-MakeTask1/nginx.conf://etc/nginx/nginx.conf:ro nginx
+#удаляем зеркало сайта на первой машине
+sudo rm -fr ~/Skillfactory-MakeTask1/www.chiark.greenend.org.uk/~sgtatham
