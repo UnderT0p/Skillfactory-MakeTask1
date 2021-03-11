@@ -19,3 +19,5 @@ sudo scp ~/Skillfactory-MakeTask1/nginx.conf $user:~/Skillfactory-MakeTask1/ngin
 ssh $user sudo docker load -i ~/Skillfactory-MakeTask1/nginxImage.tar
 #запускаем контейнер с сервисом nginx, передавая в него файлы сайта и конфигурационный файл nginx, на порту :8080
 ssh $user sudo docker run --name test3 -d -p 8080:80 -v ~/Skillfactory-MakeTask1/htmlForBugs://usr/share/nginx/html:ro -v ~/Skillfactory-MakeTask1/nginx.conf://etc/nginx/nginx.conf:ro nginx
+#удаляем зеркало сайта на первой машине
+sudo rm -fr ~/Skillfactory-MakeTask1/www.chiark.greenend.org.uk/~sgtatham
